@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+<!--EJERCICIO 1: Crear un algoritmo que recorra un array unidimensional conteniendo letras y
+números: [ “a”, 10, “b”, “hola”, 122, 15]-->
+
+
+
+
+    <script>
+      
+     const array = [ "a", 10, "b", "hola" , 123, 15]
+        function ejerciciouno(array) {
+          const letras = [];
+          const numeros = [];
+          for (item of array) {
+            if (typeof item == "string") {
+              letras.push(item);
+            } else if (typeof item == "number") {
+              numeros.push(item);
+            }
+          }
+          var numeromayor = numeros.sort(function (a, b) {
+            return b - a;
+          })[0];
+          
+          console.log('Ejercicio 1)A-   ' + letras);
+          console.log('Ejercicio 1)B-   ' + numeros);
+           console.log('Ejercicio 1)C-   ' + numeromayor);
+           
+           
+           return letras, numeros, numeromayor;
+}
+
+ejerciciouno(array);
+
+    </script>
+
+
+
+
+    <!--Crear un algoritmo de búsqueda que verifique que: el valor let a = 10 no esté dentro
+del array: [ 1, 11, “a”, “b”, 123]-->
+
+
+
+
+   <script>
+   let arrayDos = [1, 11, 'a', 'b', 123];
+   let valor = 10;
+   let p = 0;
+   
+   arrayDos.forEach(element => {
+    if (element === valor) {
+      p = 1
+    }
+  });
+  if (p === 0) {
+    
+    console.log('Ejercicio 2)  ' + valor + ' NO pertenece al array')
+  } 
+  
+  else ('Ejercicio 2)  ' + console.log(valor + ' SI pertenece al array'))
+
+
+    </script>
+
+
+    <!--Cree un algoritmo que genere el siguiente patrón de ID aleatorio: XXXX-AAAA-BBBB-CCCC-->
+
+
+
+
+    <script>
+    function GeneradorId() {
+      let first = Math.random().toString(36).substr(-4).toUpperCase();
+      let second = Math.random().toString(36).substr(-4).toUpperCase();
+      let third = Math.random().toString(36).substr(-4).toUpperCase();
+      let fourt = Math.random().toString(36).substr(-4).toUpperCase();
+      return first + "-" + second + "-" + third + "-" + fourt;
+    }
+    let id = GeneradorId();
+    console.log(id);
+
+    </script>
+</body>
+</html>
